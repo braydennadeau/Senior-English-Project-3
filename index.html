@@ -33,12 +33,14 @@
         }
         
         body.light-mode h3, 
-        body.light-mode .info-card h4 {
+        body.light-mode .info-card h4,
+        body.light-mode .surgeon-card .stat-title {
             color: #0f172a;
         }
         
         body.light-mode .info-card p,
-        body.light-mode .brain-card p {
+        body.light-mode .brain-card p,
+        body.light-mode .surgeon-card .stat-desc {
             color: #475569;
         }
 
@@ -301,43 +303,58 @@
             line-height: 1.4;
         }
 
-        /* Bar Charts */
-        .stat-bar-group {
+        /* New Surgeon Stat Cards */
+        .surgeon-card-container {
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap;
             margin-top: 20px;
         }
-        .stat-label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .bar-track {
+
+        .surgeon-card {
             background-color: var(--track-bg);
-            height: 28px;
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            transition: background-color 0.3s;
+            padding: 25px 20px;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+            transition: transform 0.2s, background-color 0.3s;
         }
-        .bar-fill {
-            height: 100%;
-            width: 0%;
-            background-color: var(--accent-color);
-            border-radius: 14px;
-            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
-            display: flex;
-            align-items: center;
-            padding-left: 15px;
-            color: #000;
+
+        .surgeon-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .surgeon-card.green {
+            border-bottom-color: #22c55e;
+        }
+
+        .surgeon-card .stat-num {
+            font-size: 3em;
             font-weight: bold;
-            font-size: 0.9em;
-            box-sizing: border-box;
-            white-space: nowrap;
+            color: var(--accent-color);
+            line-height: 1;
         }
-        .bar-fill.red {
-            background-color: #ef4444;
-            color: white;
+
+        .surgeon-card.green .stat-num {
+            color: #22c55e;
         }
+
+        .surgeon-card .stat-title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: var(--text-main);
+        }
+
+        .surgeon-card .stat-desc {
+            font-size: 0.85em;
+            color: #94a3b8;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
     </style>
 </head>
 <body>
@@ -377,243 +394,4 @@
         </div>
 
         <h3>What Age Do People Start Developing Hand-Eye Coordination?</h3>
-        <p>Kids begin to develop hand-eye coordination from a young age. Even before kids are born, or shortly after birth, babies begin to coordinate what they see with how they move. In order to continue growing their coordination and other motor skills, kids will take part in activities like writing, playing sports, walking, running, etc., until they enter elementary school.</p>
-        <p>At the point of elementary school, although kids' hand-eye coordination would have already developed significantly over the years, it is still developing. This development stage is very important to the overall growth of hand-eye coordination. At this young age, playing video games with your friends may be a big part of a young kid's life. Video game players have to react immediately to visual data presented on the screen with their hands. Therefore, video games serve as one of many forms of practice for developing hand-eye coordination for kids at critical stages of development.</p>
-
-        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Child focused on playing a video game" class="content-image">
-
-        <h3>What Age Do People Start Playing Video Games?</h3>
-        <p>Many gamers today begin to play video games when they are still in their childhood or preteen years, typically about 5-10 years old. The trend of playing video games continues into being an adult and is not just exclusively for children.</p>
-        <p>As stated by Daphne Bavelier in her TED Talk, the average age of a gamer is 33 years old. Video games have become one of those few activities we continue through our lifetime. Unlike many things such as sports where at some point you must stop—no matter if that means graduating and no longer having access to the sport or your body giving out in the pros and having to retire—it will come to an end at some point. Video games are different, and they have a lasting effect on developing minds, which make video game effects long-term.</p>
-
-        <h3>How Do Different Types Of Games Affect the Brain Differently?</h3>
-        <p>Most video games do not have the same effects as each other when it comes to how they impact your brain. Games are made for many different reasons and to build different skills. Action games will develop a player's ability to focus. Strategy games will help build the player's ability to plan ahead and think critically. Puzzle games will enhance the player's ability to solve problems. Simulations may even be used to better understand the world around us. Because of this, researchers believe that the type of game you play is much more important than how often or how long somebody has played.</p>
-
-        <h3>How Do Video Games Transfer to Real Life Tasks?</h3>
-        <p>Video game skills aren't limited to just your TV screen; they can have an impact on how you perform in the real world. There is a strong example of this with doctors. HowStuffWorks reported that surgical teams made 37% fewer mistakes and performed operations 27% faster when one surgeon was a video game player compared to the team without a gamer.</p>
-        
-        <div class="visual-stat-box">
-            <h4 style="color: var(--accent-color); margin-top: 0; text-align: center; font-size: 1.6em;">The Surgeon Advantage</h4>
-            <p style="text-align: center; font-size: 1em; margin-bottom: 30px;">Laparoscopic surgeons who play video games for at least 3 hours a week perform significantly better than non-gamers.</p>
-            
-            <div class="stat-bar-group">
-                <div class="stat-label"><span>Surgical Errors Made (Lower is Better)</span></div>
-                <div class="bar-track">
-                    <div class="bar-fill red" data-width="100%">Non-Gamers (Baseline)</div>
-                </div>
-                <div class="bar-track">
-                    <div class="bar-fill" data-width="63%">Gamers (37% Fewer Mistakes!)</div>
-                </div>
-            </div>
-
-            <div class="stat-bar-group" style="margin-top: 30px;">
-                <div class="stat-label"><span>Operation Speed (Higher is Better)</span></div>
-                <div class="bar-track">
-                    <div class="bar-fill red" data-width="73%">Non-Gamers (Baseline Speed)</div>
-                </div>
-                <div class="bar-track">
-                    <div class="bar-fill" data-width="100%">Gamers (27% Faster!)</div>
-                </div>
-            </div>
-        </div>
-
-        <p>That demonstrates the ability to be coordinated and focus on real-life tasks that can be created by video games. The skills you develop in gaming help people outside of gaming. For example, drivers, athletes, etc. Gamers may be able to react faster during a stressful situation. They will most likely be more attentive and remember things better in school, helping them be more involved and receive higher grades.</p>
-
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern Desktop Gaming Setup" class="content-image">
-
-        <h3>What Parts Of The Brain Are Most Stimulated By Video Games?</h3>
-        
-        <div class="visual-stat-box">
-            <h4 style="color: var(--accent-color); margin-top: 0; text-align: center; font-size: 1.6em;">🧠 The Gamer's Brain</h4>
-            <p style="text-align: center; font-size: 1em; margin-bottom: 10px;">Studies show that repeated gaming actively increases efficiency and neural connections in these specific regions:</p>
-            
-            <div class="brain-grid">
-                <div class="brain-card">
-                    <h5>Parietal Cortex</h5>
-                    <p>Responsible for shifting and maintaining intense visual attention across the screen.</p>
-                </div>
-                <div class="brain-card">
-                    <h5>Frontal Lobe</h5>
-                    <p>Handles complex problem solving and rapid, real-time decision making.</p>
-                </div>
-                <div class="brain-card">
-                    <h5>Anterior Cingulate</h5>
-                    <p>Maintains high-level focus and regulates emotion during conflict situations.</p>
-                </div>
-                <div class="brain-card">
-                    <h5>Motor Cortex</h5>
-                    <p>Builds muscle memory, allowing gamers to react physically without thinking.</p>
-                </div>
-            </div>
-        </div>
-
-        <h2>How Gaming Builds Brain Power</h2>
-        <div class="infographic">
-            <div class="info-card">
-                <div class="icon">🎮</div>
-                <h4>Action Games</h4>
-                <p>Develops extreme focus</p>
-            </div>
-            <div class="info-card">
-                <div class="icon">♟️</div>
-                <h4>Strategy Games</h4>
-                <p>Builds planning skills</p>
-            </div>
-            <div class="info-card">
-                <div class="icon">🧩</div>
-                <h4>Puzzle Games</h4>
-                <p>Enhances problem solving</p>
-            </div>
-            <div class="info-card">
-                <div class="icon">🩺</div>
-                <h4>Simulations</h4>
-                <p>Improves real-world jobs</p>
-            </div>
-        </div>
-
-        <h3>What Type Of Studies Have Already Been Done To Test The Impact Of Video Games?</h3>
-        <p>Scientists have done a variety of research on how video games can affect the mind and body. One study in behavioral science shows that highly trained video game players outperformed those with less training when completing reaction and memory tests.</p>
-        <p>Another study in motor skills demonstrated that video game players were able to complete hand-eye coordination tasks at a higher level than non-video game players.</p>
-        <p>The NIH completed a very large-scale study that demonstrated that children who took part in playing video games also completed memory and impulse control tasks at a higher level than those who don't play video games.</p>
-        <p>In conclusion, most of the studies that look at the effects of video games on a person take place by creating a group of people who don't play and a separate group who do play video games, and have them complete tasks that require you to use a skill like hand-eye coordination.</p>
-
-        <h3>What Tools Measure Reaction Time, Coordination And Cognitive Performance?</h3>
-        <p>There are many tools that scientists use to measure how gaming affects the brain. These include reaction time tests, memory tasks, eye-tracking devices, and brain imaging. Brain imaging is when scientists scan your active brain while doing a task; this shows what parts of your brain that specific task is activating and how much it is engaged in that task.</p>
-
-        <div style="background-color: var(--box-bg); padding: 30px; text-align: center; border-radius: 8px; margin: 30px 0; border: 2px dashed var(--accent-color); transition: background-color 0.3s;">
-            <h4 style="color: var(--accent-color); margin-top: 0; font-size: 1.5em;">🎮 Mini-Game: Test Your Reaction Time</h4>
-            <p style="font-size: 0.9em; color: #8492a6;">Gamers often have faster reaction times. Click the button below to start. When the box turns GREEN, click it as fast as you can!</p>
-            
-            <button id="reaction-btn" style="background-color: #334155; color: white; border: none; padding: 40px; font-size: 1.2em; border-radius: 8px; cursor: pointer; width: 100%; max-width: 400px; transition: transform 0.1s; font-weight: bold;">
-                Click to Start
-            </button>
-            <p id="reaction-result" style="font-size: 1.2em; font-weight: bold; margin-top: 15px; height: 20px;"></p>
-        </div>
-        
-        <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Virtual reality simulation" class="content-image">
-
-        <h3>Why This Matters And The Impact of Gaming</h3>
-        <p>The topic of video games is important because they are an important part of our generation. According to WePlay Holding, a massive portion of the population plays video games. That means on average 64% of the people you know play video games! Instead of seeing them as only a distraction, people should understand how gaming can help develop useful skills. Skills like faster thinking, better memory, and improved focus can help in school, sports, and future careers.</p>
-
-        <h2>Conclusion</h2>
-        <p>Video games are much more than a form of entertainment. Video games also serve as an educational tool for improving brain function and enhancing your ability to perform better in real-world situations. Studies have proved that playing video games improves hand-eye coordination, helps improve focus and attention, and enhances your memory and decision-making skills.</p>
-        <p>As with almost anything, excessive video game play can have its negative impacts, but moderate video game play will show positive results. We should no longer be asking the question: "Are video games bad or good?" We should be asking: "What potential benefits can I gain from using video games?"</p>
-    </main>
-
-    <div class="works-cited" id="works-cited">
-        <div class="container">
-            <h2>Works Cited</h2>
-            
-            <div class="citation">Bavelier, Daphne. "Your Brain on Video Games." <em>TED</em>, 19 Nov. 2012, <a href="https://www.youtube.com/watch?v=FktsFcooIG8" target="_blank">https://www.youtube.com/watch?v=FktsFcooIG8</a>.</div>
-            
-            <div class="citation">Biology Insights. "Does Gaming Improve Hand-Eye Coordination?" <em>Biology Insights</em>, <a href="https://biologyinsights.com/does-gaming-improve-hand-eye-coordination/" target="_blank">https://biologyinsights.com/does-gaming-improve-hand-eye-coordination/</a>.</div>
-            
-            <div class="citation">Fort Worth Weekly. "Gaming and Motor Skills Development: What Scientists Say." <em>FW Weekly</em>, 17 Feb. 2025, <a href="https://www.fwweekly.com/2025/02/17/gaming-and-motor-skills-development-what-scientists-say" target="_blank">https://www.fwweekly.com/2025/02/17/gaming-and-motor-skills-development-what-scientists-say</a>.</div>
-            
-            <div class="citation">HowStuffWorks. "Do Video Games Improve Hand-Eye Coordination?" <em>HowStuffWorks</em>, <a href="https://electronics.howstuffworks.com/do-video-games-improve-hand-eye-coordination.htm" target="_blank">https://electronics.howstuffworks.com/do-video-games-improve-hand-eye-coordination.htm</a>.</div>
-            
-            <div class="citation">MDPI. "Article 874." <em>MDPI</em>, <a href="https://www.mdpi.com/2076-328X/14/10/874" target="_blank">https://www.mdpi.com/2076-328X/14/10/874</a>.</div>
-            
-            <div class="citation">MDPI. "Article 24." <em>MDPI</em>, <a href="https://www.mdpi.com/2076-3425/16/1/24" target="_blank">https://www.mdpi.com/2076-3425/16/1/24</a>.</div>
-            
-            <div class="citation">National Institutes of Health (NIH). "Video Gaming May Be Associated with Better Cognitive Performance in Children." <em>NIH</em>, <a href="https://www.nih.gov/news-events/news-releases/video-gaming-may-be-associated-better-cognitive-performance-children" target="_blank">https://www.nih.gov/news-events/news-releases/video-gaming-may-be-associated-better-cognitive-performance-children</a>.</div>
-            
-            <div class="citation">Nature. "Article 10986-3." <em>Nature Scientific Reports</em>, <a href="https://www.nature.com/articles/s41598-022-10986-3" target="_blank">https://www.nature.com/articles/s41598-022-10986-3</a>.</div>
-            
-            <div class="citation">PubMed. "Article 6622153." <em>National Library of Medicine</em>, <a href="https://pubmed.ncbi.nlm.nih.gov/6622153/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/6622153/</a>.</div>
-            
-            <div class="citation">Science Insights. "Do Video Games Actually Improve Reaction Time?" <em>Science Insights</em>, <a href="https://scienceinsights.org/do-video-games-actually-improve-reaction-time/" target="_blank">https://scienceinsights.org/do-video-games-actually-improve-reaction-time/</a>.</div>
-            
-            <div class="citation">ScienceDirect. "Article S0001691808001200." <em>ScienceDirect</em>, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0001691808001200" target="_blank">https://www.sciencedirect.com/science/article/abs/pii/S0001691808001200</a>.</div>
-            
-            <div class="citation">WePlay Holding. "How Many People Play Video Games in the World?" <em>WePlay Holding</em>, <a href="https://weplayholding.com/blog/how-many-people-play-video-games-in-the-world/" target="_blank">https://weplayholding.com/blog/how-many-people-play-video-games-in-the-world/</a>.</div>
-            
-            <div class="citation">Wired. "What Gaming Does to Your Brain—and How You Might Benefit." <em>Wired</em>, <a href="https://www.wired.com/story/what-gaming-does-to-your-brain-how-you-might-benefit/" target="_blank">https://www.wired.com/story/what-gaming-does-to-your-brain-how-you-might-benefit/</a>.</div>
-            
-            <div class="citation">arXiv. "Article 1504.01665." <em>arXiv</em>, <a href="https://arxiv.org/abs/1504.01665" target="_blank">https://arxiv.org/abs/1504.01665</a>.</div>
-            
-            <h2 id="images-cited" style="margin-top: 40px;">Images Cited</h2>
-            <div class="citation">Unsplash. "Neon Keyboard and Setup." Photograph by Sean Do, <a href="https://images.unsplash.com/photo-1542751371-adc38448a05e" target="_blank">https://images.unsplash.com/photo-1542751371-adc38448a05e</a>.</div>
-            <div class="citation">Unsplash. "Kid gaming." Photograph by Kelly Sikkema, <a href="https://images.unsplash.com/photo-1560253023-3ec5d502959f" target="_blank">https://images.unsplash.com/photo-1560253023-3ec5d502959f</a>.</div>
-            <div class="citation">Unsplash. "Modern Desktop Gaming Setup." Photograph by Carl Raw, <a href="https://images.unsplash.com/photo-1550745165-9bc0b252726f" target="_blank">https://images.unsplash.com/photo-1550745165-9bc0b252726f</a>.</div>
-            <div class="citation">Unsplash. "Virtual Reality Goggles." Photograph by XR Expo, <a href="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac" target="_blank">https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac</a>.</div>
-        </div>
-    </div>
-
-    <script>
-        // 1. Reading Progress Bar Logic
-        window.onscroll = function() {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-        };
-
-        // 2. Dark/Light Mode Logic
-        const themeBtn = document.getElementById('theme-toggle');
-        themeBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                themeBtn.innerText = '🌙 Dark Mode';
-            } else {
-                themeBtn.innerText = '☀️ Light Mode';
-            }
-        });
-
-        // 3. Reaction Test Logic
-        const btn = document.getElementById('reaction-btn');
-        const resultText = document.getElementById('reaction-result');
-        let startTime, timeoutId;
-        let isWaiting = false;
-
-        btn.addEventListener('click', () => {
-            if (btn.style.backgroundColor === 'rgb(34, 197, 94)' || btn.style.backgroundColor === '#22c55e') {
-                let reactionTime = Date.now() - startTime;
-                resultText.innerHTML = `Your time: <span style="color: var(--accent-color)">${reactionTime} ms!</span>`;
-                
-                if (document.body.classList.contains('light-mode')) {
-                    resultText.style.color = "#0f172a"; 
-                } else {
-                    resultText.style.color = "white";
-                }
-
-                btn.innerText = "Click to Try Again";
-                btn.style.backgroundColor = "#334155";
-                isWaiting = false;
-            } else if (isWaiting) {
-                clearTimeout(timeoutId);
-                resultText.innerText = "Too early! Try again.";
-                resultText.style.color = "#ef4444";
-                btn.innerText = "Click to Start";
-                isWaiting = false;
-            } else {
-                btn.innerText = "Wait for green...";
-                btn.style.backgroundColor = "#ef4444"; 
-                resultText.innerText = "";
-                isWaiting = true;
-
-                let randomDelay = Math.floor(Math.random() * 2500) + 1500;
-                timeoutId = setTimeout(() => {
-                    btn.style.backgroundColor = "#22c55e"; 
-                    btn.innerText = "CLICK NOW!";
-                    startTime = Date.now();
-                }, randomDelay);
-            }
-        });
-
-        // 4. Animate Infographics on Scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Animate Bar Charts
-                    if (entry.target.classList.contains('bar-fill')) {
-                        entry.target.style.width = entry.target.getAttribute('data-width');
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.bar-fill').forEach(el => observer.observe(el));
-    </script>
-</body>
-</html>
+        <p>Kids begin to develop hand-eye coordination from a young age. Even before kids are born, or shortly after birth, babies begin to coordinate what they see with how they move. In order to
